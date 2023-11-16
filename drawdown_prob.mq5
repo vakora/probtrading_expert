@@ -43,8 +43,12 @@ void OnTick()
 //+------------------------------------------------------------------+
 void DisableAccount()
 {
-    // Your code to deactivate the user account goes here
-    // This will depend on the specific platform and setup you have
+    // Get the current login ID
+    int loginID = AccountInfoInteger(ACCOUNT_LOGIN);
     
-    // For security reasons, it's recommended to consult with a professional
+    // Close the MetaTrader terminal to disable the account
+    TerminalClose(loginID);
+    
+    Print("Account ", loginID, " has been disabled.");
+
 }
